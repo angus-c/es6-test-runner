@@ -2,21 +2,23 @@
 
 [![Build Status](https://secure.travis-ci.org/angus-c/es6-test-runner.png?branch=master)](http://travis-ci.org/angus-c/es6-test-runner)
 
-`es6-test-runner` is a boilerplate for testing your es6 app using mocha and chai over karma runner. It uses webpack to preprocess your application code and babel to transpile to es5.
+`es6-test-runner` is a boilerplate for testing your es6 app using mocha and chai over karma runner. It uses webpack bundle your application code and babel to transpile it to ES5.
 
-Use it as a blueprint for your module. The `npm prepublish` step will transpile your module to es5 and place it in the `lib` directory for public consumption.
+Use it as a template for your modules. The `npm prepublish` step will transpile your module to es5 and place it in the `lib` directory for public consumption.
 
 ## naming conventions
 
-Tests are expected to end in `.spec.js` and live in the tests directory.
+Tests are expected to end in `.spec.js` and live in the `tests` directory.
 
 ##Installation
 
+This is just a template module so you wouldn't install it from npm. However it's fully configured for you to make an npm module from your fork of the repo.
+
 ```
-npm install es6-test-runner
+npm install <your fork of es6-test-runner>
 ```
 
-However this will export an empty `lib/index.js` file. To test your code, fork this repo and add your testable JavaScript to the `src` directory.
+When installed it will transpile your `src` code to es5 and drop into into `lib`. Users insatlling your module will import `lib.index.js`.
 
 ##Testing
 
@@ -24,9 +26,6 @@ However this will export an empty `lib/index.js` file. To test your code, fork t
 npm test
 ```
 
-##Contributions
-
-Yes please!
 
 
 
