@@ -6,7 +6,7 @@
 
 Use it as a template for your modules. The `npm prepublish` step will transpile your module to es5 and place it in the `lib` directory for public consumption.
 
-## naming conventions
+## Naming Conventions
 
 Tests are expected to end in `.spec.js` and live in the `tests` directory.
 
