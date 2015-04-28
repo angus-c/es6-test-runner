@@ -58,4 +58,8 @@ describe('ES6 Array.prototype methods', () => {
   describe('Array.prototype.keys', () => {
   });
 
+  // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-array.prototype.values
+  describe('Array.prototype.values', () => {
+  });
+
 });
