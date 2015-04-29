@@ -1,4 +1,4 @@
-describe.only('ES6 Object constructor methods', () => {
+describe('ES6 Object constructor methods', () => {
   let obj;
   beforeEach(() => {
     obj = {
@@ -55,7 +55,7 @@ describe.only('ES6 Object constructor methods', () => {
     });
   });
 
-  // http://kangax.github.io/compat-table/es6/#Object_static_methods_Object.getOwnPropertySymbols
+  // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.getownpropertysymbols
   describe('Object.getOwnPropertySymbols', () => {
-  }
+  });
 });
