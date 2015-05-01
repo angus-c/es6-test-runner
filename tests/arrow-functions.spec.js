@@ -1,7 +1,7 @@
 https://people.mozilla.org/~jorendorff/es6-draft.html#sec-arrow-function-definitions
-describe('arrow functions', () => {
+describe.only('arrow functions', () => {
   let fn;
-  describe.only('braces and return statement', () => {
+  describe('braces and return statement', () => {
     it('does not need braces or return for single statement', () => {
       fn = x => x * x;
       assert.equal(fn(4), 16);
@@ -29,5 +29,38 @@ describe('arrow functions', () => {
   });
 
   describe('`this` value', () => {
+    it('observes lexical `this` binding', () => {
+      let obj = {
+        outerFn: () => {
+          assert.equal(obj, this);
+          fn = () => {
+            assert.equal(obj, this);
+          };
+          return fn();
+        }
+      }
+    });
+    it('will not allow call/apply/bind to change `this`', () => {
+      let obj = {
+        outerFn: () => {
+          fn = () => {
+            return this;
+          };
+          assert.equal(fn.call({}), obj);
+          assert.equal(fn.apply({}), obj);
+          assert.equal(fn.bind({})(), obj);
+        }
+      }
+    });
+  });
+
+  describe('an arrow function is not a full function', () => {
+    it('has no prototype', () => {
+      assert.isUndefined((x => x*x).prototype);
+    });
+    it('is not a constructor', () => {
+      assert.isUndefined((x => x*x).prototype);
+    });
+
   });
 });
