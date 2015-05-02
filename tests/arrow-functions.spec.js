@@ -1,5 +1,5 @@
 https://people.mozilla.org/~jorendorff/es6-draft.html#sec-arrow-function-definitions
-describe.only('arrow functions', () => {
+describe('arrow functions', () => {
   let fn;
   describe('braces and return statement', () => {
     it('does not need braces or return for single statement', () => {
@@ -59,8 +59,7 @@ describe.only('arrow functions', () => {
       assert.isUndefined((x => x*x).prototype);
     });
     it('is not a constructor', () => {
-      assert.isUndefined((x => x*x).prototype);
+      assert.throw(() => new (x => x*x), Error);
     });
-
   });
 });
