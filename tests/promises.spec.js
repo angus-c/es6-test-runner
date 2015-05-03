@@ -14,6 +14,25 @@ describe('Promises', () => {
     });
   });
 
+  describe('timing', () => {
+    it('is async', (done) => {
+      let buffer = [];
+      new Promise(
+        (resolve) => {
+          resolve();
+          buffer.push('hello');
+        }
+      ).then(() => {
+        buffer.push('goodbye');
+        assert.equal(buffer[0], 'hello');
+        assert.equal(buffer[1], 'goodbye');
+        done();
+      });
+      assert.equal(buffer[0], 'hello');
+      assert.equal(buffer[1], undefined);
+    });
+  });
+
   describe('resolve and reject', () => {
     function getPromise(success) {
       return new Promise((resolve, reject) => {
