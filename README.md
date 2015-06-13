@@ -1,7 +1,5 @@
 # es6-test-runner
 
-[![Build Status](https://secure.travis-ci.org/angus-c/es6-test-runner.png?branch=master)](http://travis-ci.org/angus-c/es6-test-runner)
-
 `es6-test-runner` is a boilerplate for testing your es6 app using karma runner over mocha and chai. It uses webpack to build the test bundle and babel to transpile it to ES5.
 
 Use it as a template for your es6 modules.
