@@ -18,12 +18,15 @@ This is just a template module so you wouldn't install it from npm. However it's
 npm install <your fork of es6-test-runner>
 ```
 
-When installed it will transpile your `src` code to es5 and drop into into `lib`. Users insatlling your module will import `lib.index.js`.
+When installed it will transpile your `src` code to es5 and drop into into `lib`. Users installing your module will import `lib.index.js`.
 
 ##Testing
 
 ```
+// single run
 npm test
+// auto-watch
+npm run testc
 ```
 
 
